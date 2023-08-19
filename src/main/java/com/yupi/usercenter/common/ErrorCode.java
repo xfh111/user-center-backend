@@ -8,6 +8,7 @@ public enum ErrorCode {
     NOT_LOGIN(40100,"登录异常",""),
     NOT_LOGOUT(40200,"登出异常",""),
     NO_AUTH(40101,"无权限",""),
+    NO_CURRENTUSER(400200,"没有当前用户",""),
     SYSTEM_ERROR(50000,"系统异常",""),
     ;
 
