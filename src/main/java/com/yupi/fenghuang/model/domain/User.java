@@ -1,4 +1,4 @@
-package com.yupi.usercenter.domain;
+package com.yupi.fenghuang.domain;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
@@ -15,35 +15,39 @@ import java.util.Date;
 public class User implements Serializable {
     /**
      * id
-
      */
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private long id;
 
     /**
-     * 用户名
+     * 用户简介
+     */
+    private String profile;
+
+    /**
+     * 用户昵称
      */
     private String username;
 
     /**
-     * 登录账号
+     * 账号
      */
     private String userAccount;
-
-    /**
-     * 头像
-     */
-    private String avatarUrl;
-
-    /**
-     * 性别
-     */
-    private Integer gender;
 
     /**
      * 密码
      */
     private String userPassword;
+
+    /**
+     * 性别
+     */
+    private Byte gender;
+
+    /**
+     * 用户头像
+     */
+    private String avatarUrl;
 
     /**
      * 电话
@@ -66,7 +70,7 @@ public class User implements Serializable {
     private Date createTime;
 
     /**
-     * 更新时间
+     * 
      */
     private Date updateTime;
 
@@ -74,17 +78,22 @@ public class User implements Serializable {
      * 是否删除
      */
     @TableLogic
-    private Integer isDelete;
+    private Byte isDelete;
 
     /**
-     * 用户权限 0 - 用户 1 - 管理员
+     * 用户角色 0 - 普通用户 1 - 管理员
      */
     private Integer userRole;
 
     /**
-     * 身份编号(用户自己输入 2-5 位 类似于身份证)
+     * 星球编号
      */
     private String idCode;
+
+    /**
+     * 标签 json 列表
+     */
+    private String tags;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
